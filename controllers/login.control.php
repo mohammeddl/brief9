@@ -7,8 +7,9 @@ $persons->__construct(new db());
 if (isset($_POST['submitLogin'])) {
     $email = $_POST['email'];
     $pass = $_POST['pass'];
-
-    $result = $persons->authenticate($email, $pass);
+    $result = $persons->authenticate($email,$pass);
+    // var_dump($result);
+    // die("here");
 
 
 }

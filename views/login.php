@@ -21,7 +21,7 @@
           <h2 class="my-14 text-center text-3xl font-extrabold text-gray-900">
             Sign in to your account
           </h2>
-          <form class="space-y-6" action="../controllers/login.control.php" method="POST">
+          <form class="space-y-6" action="../controllers/login.control.php" enctype="multipart/form-data" method="POST">
             <div>
               <label for="email" class="block text-sm font-medium text-gray-700">
                 Email address

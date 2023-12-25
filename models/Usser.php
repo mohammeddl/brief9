@@ -48,7 +48,7 @@ public function insertPerson($prenom, $nom, $email, $pass)
 
 
 
-public function authenticate($pass, $email)
+public function authenticate($email, $pass)
 {
     try {
         $conn = $this->db->getConnection();
@@ -56,14 +56,14 @@ public function authenticate($pass, $email)
         $stmt->bindParam(':email', $email);
         $stmt->execute();
 
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);    
+        $row = $stmt->fetch (PDO::FETCH_ASSOC);    
         
-        if ($row && password_verify( $pass,$row['pass'])) {
+
+        if ($row && password_verify($pass, $row['Password'])) {
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['user_name'] = $row['name'];
-            $_SESSION['lastName'] = $row['lastName'];
-            $_SESSION['Email'] = $row['email'];
             $_SESSION['user_role'] = $row['Role'];
+            $_SESSION['Email'] = $row['email'];
             $_SESSION['project_ID'] = $row['projet'];
 
             
@@ -71,7 +71,7 @@ public function authenticate($pass, $email)
 
             switch ($_SESSION['user_role']) {
                 case "ScrumMaster":
-                    $_SESSION['user_role'] = 'ScrumMaster';
+                    $_SESSION['status'] = 'ScrumMaster';
                     header("Location: ../view/ScrumMaster.php");
                     exit;
                 case "member":
@@ -79,7 +79,6 @@ public function authenticate($pass, $email)
                     $_SESSION['user_role'] = 'member';
                     header("Location: ../views/home.php");
                     exit;
-
                 case "ProductOwner":
                     
                 $_SESSION['user_role'] = 'ProductOwner';
