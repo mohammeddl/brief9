@@ -96,7 +96,7 @@ require_once "../controllers/login.control.php";
               </div>
               <nav class="mt-5 flex-1 px-2 space-y-1">
                 
-                  <a href="" class="bg-[#9FAABC] text-white hover:bg-indigo-600 hover:bg-opacity-75 group flex items-center px-2 py-2 text-sm font-medium rounded-md" x-state:on="Current" x-state:off="Default" x-state-description="Current: &quot;bg-indigo-800 text-white&quot;, Default: &quot;text-white hover:bg-indigo-600 hover:bg-opacity-75&quot;">
+                  <a href="home.php" class=" text-white hover:bg-indigo-600 hover:bg-opacity-75 group flex items-center px-2 py-2 text-sm font-medium rounded-md" x-state:on="Current" x-state:off="Default" x-state-description="Current: &quot;bg-indigo-800 text-white&quot;, Default: &quot;text-white hover:bg-indigo-600 hover:bg-opacity-75&quot;">
                     <svg class="mr-3 flex-shrink-0 h-6 w-6 text-indigo-300" x-description="Heroicon name: outline/home" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
     </svg>
@@ -110,7 +110,7 @@ require_once "../controllers/login.control.php";
                     Team
                   </a>
                 
-                  <a href="project.php" class="  text-white hover:bg-indigo-600 hover:bg-opacity-75 group flex items-center px-2 py-2 text-sm font-medium rounded-md" x-state-description="undefined: &quot;bg-indigo-800 text-white&quot;, undefined: &quot;text-white hover:bg-indigo-600 hover:bg-opacity-75&quot;">
+                  <a href="#" class=" bg-[#9FAABC] text-white hover:bg-indigo-600 hover:bg-opacity-75 group flex items-center px-2 py-2 text-sm font-medium rounded-md" x-state-description="undefined: &quot;bg-indigo-800 text-white&quot;, undefined: &quot;text-white hover:bg-indigo-600 hover:bg-opacity-75&quot;">
                     <svg class="mr-3 flex-shrink-0 h-6 w-6 text-indigo-300" x-description="Heroicon name: outline/folder" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
     </svg>
@@ -146,89 +146,112 @@ require_once "../controllers/login.control.php";
             </button>
           </div>
           <main class="flex-1">
-            <div class="py-6">
-              <div class="max-w-7xl my-10 mx-auto px-4 sm:px-6 md:px-8">
-                <div class="pb-16 bg-gradient-to-r from-teal-500 to-cyan-600 lg:pb-0 lg:z-10 lg:relative">
-                  <div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:gap-8">
-                    <div class="relative lg:-my-8">
-                      <div aria-hidden="true" class="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden"></div>
-                      <div class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:p-0 lg:h-full">
-                        <div class="aspect-w-10 aspect-h-6 rounded-xl shadow-xl overflow-hidden sm:aspect-w-16 sm:aspect-h-7 lg:aspect-none lg:h-full">
-                          <img class="object-cover lg:h-full lg:w-full" src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2102&amp;q=80" alt="">
-                        </div>
-                      </div>
+            <div class="">
+              <div class="relative bg-[#E7E8EA] pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+                  <div class="absolute inset-0">
+                    <div class="bg-[#E7E8EA] "></div>
+                  </div>
+                  <div class="relative max-w-7xl mx-auto">
+                    <div class="text-center">
+                    <div x-data="{ open: false }" @keydown.window.escape="open = false">
+        <!-- Button to trigger the form pop-up -->
+        <button class="inline-flex bg-[#0891b1] items-center my-5 px-4 py-2 hover:bg-indigo-600 text-white text-sm font-medium rounded-md" @click="open = true">
+            Ajout project
+        </button>
+                      <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
+                        From the blog
+                      </h2>
+                      <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque, ducimus sed.
+                      </p>
                     </div>
-                    <div class="mt-12 lg:m-0 lg:col-span-2 lg:pl-8">
-                      <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:px-0 lg:py-20 lg:max-w-none">
-                        <blockquote>
-                          <div>
-                            <svg class="h-12 w-12 text-white opacity-25" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-                              <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"></path>
-                            </svg>
-                            <p class="mt-6 text-2xl font-medium text-white">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet feugiat est integer dolor auctor adipiscing nunc urna, sit.
-                            </p>
+                    <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+                      
+                        <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+                          <div class="flex-shrink-0">
+                            <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1679&amp;q=80" alt="">
                           </div>
-                          <footer class="mt-6">
-                            <p class="text-base font-medium text-white">Daali mohammed</p>
-                            <p class="text-base font-medium text-cyan-100">CEO at PureInsights</p>
-                          </footer>
-                        </blockquote>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-                <div >
-                    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-                      
-                  <div>
-                    <h3 class="text-lg leading-6 font-medium text-gray-900">
-                      Stats
-                    </h3>
-                    <dl class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
-                      
-                        <div class="px-4 py-5 bg-white shadow rounded-lg overflow-hidden sm:p-6">
-                          <dt class="text-sm font-medium text-gray-500 truncate">
-                            Projects
-                          </dt>
-                          <dd class="mt-1 text-3xl font-semibold text-gray-900">
-                            71,897
-                          </dd>
-                        </div>
-                      
-                        <div class="px-4 py-5 bg-white shadow rounded-lg overflow-hidden sm:p-6">
-                          <dt class="text-sm font-medium text-gray-500 truncate">
-                            Taksas
-                          </dt>
-                          <dd class="mt-1 text-3xl font-semibold text-gray-900">
-                            58.16%
-                          </dd>
-                        </div>
-                      
-                        <div class="px-4 py-5 bg-white shadow rounded-lg overflow-hidden sm:p-6">
-                          <dt class="text-sm font-medium text-gray-500 truncate">
-                            Users
-                          </dt>
-                          <dd class="mt-1 text-3xl font-semibold text-gray-900">
-                            24.57%
-                          </dd>
-                        </div>
-                      
-                    </dl>
-                  </div>
-                
-                    </div>
-                  </div>
-                <!-- Replace with your content -->
-                <div class="py-4">
-                  <div class="border-4 border-dashed border-gray-200 rounded-lg h-96"></div>
-                </div>
-                <!-- Testimonial section -->
+                          <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+                            <div class="flex-1">
+                              <p class="text-sm font-medium text-indigo-600">
+                                <a href="#" class="hover:underline">
+                                  Article
+                                </a>
+                              </p>
+                              <a href="#" class="block mt-2">
+                                <p class="text-xl font-semibold text-gray-900">
+                                  Boost your conversion rate
+                                </p>
+                                <p class="mt-3 text-base text-gray-500">
+                                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.
+                                </p>
+                              </a>
+                            </div>
+                            <div class="mt-6 flex items-center">
+                              <div class="flex-shrink-0">
+                                <a href="#">
+                                  <span class="sr-only">Roel Aufderehar</span>
+                                  <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                                </a>
+                              </div>
+                              <div class="ml-3 flex gap-3">
+                                <div>
+                                <p class="text-sm font-medium text-gray-900">
+                                  <a href="#" class="hover:underline">
+                                    Roel Aufderehar
+                                  </a>
+                                </p>
+                                <div class="flex space-x-1 text-sm text-gray-500">
+                                  <time datetime="2020-03-16">
+                                    Mar 16, 2020
+                                  </time>
+                                  <span aria-hidden="true">
+                                    ·
+                                  </span>
+                                  <span>
+                                    6 min read
+                                  </span>
+                                </div>
+                                </div>
+                                <button class="inline-flex items px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-medium rounded-md">
+	<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+	  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+	</svg>
 
-              </div>
+	Modifier
+  </button>
+
+ 
+   <!-- Form pop-up container -->
+   <div x-show="open" class="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50" x-description="Form pop-up overlay" @click="open = false" aria-hidden="true">
+            <div class="modal-content bg-white mx-auto my-8 p-8 w-1/2">
+                <!-- Form content -->
+                <form action="../controllers/your_form_handler.php" method="POST">
+                    <div class="mb-4">
+                        <span @click="open = false" class="float-right cursor-pointer">&times;</span>
+                        <h2 class="text-2xl font-bold">Add Project</h2>
+                    </div>
+                    <label for="projectName" class="block text-sm font-medium text-gray-700">Project Name</label>
+                    <input type="text" id="projectName" name="projectName" class="mt-1 p-2 border border-gray-300 rounded-md">
+
+                    <label for="projectDescription" class="block mt-4 text-sm font-medium text-gray-700">Project Description</label>
+                    <textarea id="projectDescription" name="projectDescription" rows="4" class="mt-1 p-2 border border-gray-300 rounded-md"></textarea>
+
+                    <label for="projectTasks" class="block mt-4 text-sm font-medium text-gray-700">Project Tasks</label>
+                    <input type="text" id="projectTasks" name="projectTasks" class="mt-1 p-2 border border-gray-300 rounded-md">
+
+                    <button type="submit" class="mt-4 inline-flex bg-[#0891b1] items-center px-4 py-2 hover:bg-indigo-600 text-white text-sm font-medium rounded-md">
+                        Add Project
+                    </button>
+                </form>
             </div>
+        </div>
+    </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
           </main>
         </div>
       </div>

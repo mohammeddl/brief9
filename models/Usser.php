@@ -47,7 +47,6 @@ public function insertPerson($prenom, $nom, $email, $pass)
 }
 
 
-
 public function authenticate($email, $pass)
 {
     try {
@@ -58,7 +57,7 @@ public function authenticate($email, $pass)
 
         $row = $stmt->fetch (PDO::FETCH_ASSOC);    
         
-
+        
         if ($row && password_verify($pass, $row['Password'])) {
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['user_name'] = $row['name'];

@@ -9,7 +9,8 @@ CREATE TABLE users (
 CREATE TABLE projects (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
-    description TEXT
+    description TEXT,
+    tache VARCHAR(255)
 );
 
 CREATE TABLE tasks (
