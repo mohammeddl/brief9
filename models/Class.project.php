@@ -17,6 +17,7 @@ class Project
             $conn = $this->db->getConnection();
             $stmt = $conn->prepare("INSERT INTO projects (name, description, start_date, end_date) VALUES (?, ?, ?, ?)");
             $stmt->execute([$name, $description, $startDate, $endDate]);
+            
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
