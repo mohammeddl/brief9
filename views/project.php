@@ -1,5 +1,8 @@
 <?php
-require_once "../controllers/login.control.php";
+require_once "../controllers/project.control.php";
+
+$project = new Project();
+$displayProjet = $project->getAllProjects();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -141,94 +144,104 @@ require_once "../controllers/login.control.php";
             <button type="button" class="-ml-0.5 -mt-0.5 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" @click="open = true">
               <span class="sr-only">Open sidebar</span>
               <svg class="h-6 w-6" x-description="Heroicon name: outline/menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-    </svg>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
             </button>
           </div>
-          <main class="flex-1">
-            <div class="">
-              <div class="relative bg-[#E7E8EA] pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
-                  <div class="absolute inset-0">
-                    <div class="bg-[#E7E8EA] "></div>
-                  </div>
-                  <div class="relative max-w-7xl mx-auto">
-                    <div class="text-center">
-                    <div x-data="{ open: false }" @keydown.window.escape="open = false">
-        <!-- Button to trigger the form pop-up -->
-        <button class="inline-flex bg-[#0891b1] items-center my-5 px-4 py-2 hover:bg-indigo-600 text-white text-sm font-medium rounded-md" @click="open = true">
-            Ajout project
-        </button>
-                      <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
-                        From the blog
-                      </h2>
-                      <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque, ducimus sed.
-                      </p>
-                    </div>
-                    <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-                      
-                        <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+          
+          <div class="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+              <div class="absolute inset-0">
+                <div class="bg-white h-1/3 sm:h-2/3"></div>
+              </div>
+              <div class="relative max-w-7xl mx-auto">
+                <div class="text-center">
+                <button onclick="clickHidden()" class="inline-flex bg-[#0891b1] items-center my-5 px-4 py-2 hover:bg-indigo-600 text-white text-sm font-medium rounded-md">
+                            Ajout project
+                        </button>
+                  <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
+                    From the blog
+                  </h2>
+                  <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque, ducimus sed.
+                  </p>
+                </div>
+                <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+                <?php foreach($displayProjet as $display){ ?>
+                    <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+                      <div class="flex-shrink-0">
+                        <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1679&amp;q=80" alt="">
+                      </div>
+                      <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+                        <div class="flex-1">
+                          <p class="text-sm font-medium text-indigo-600">
+                            <a href="#" class="hover:underline">
+                              Article
+                            </a>
+                          </p>
+                          <a href="#" class="block mt-2">
+                            <p class="text-xl font-semibold text-gray-900">
+                            <?=$display['name']?>
+                            </p>
+                            <p class="mt-3 text-base text-gray-500">
+                            <?=$display['description']?>
+                            </p>
+                          </a>
+                        </div>
+                        <div class="mt-6 flex items-center ">
                           <div class="flex-shrink-0">
-                            <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1679&amp;q=80" alt="">
+                            <a href="#"><div>
+                              <span class="sr-only">Roel Aufderehar</span>
+                              <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                            </a>
                           </div>
-                          <div class="flex-1 bg-white p-6 flex flex-col justify-between">
-                            <div class="flex-1">
-                              <p class="text-sm font-medium text-indigo-600">
-                                <a href="#" class="hover:underline">
-                                  Article
-                                </a>
-                              </p>
-                              <a href="#" class="block mt-2">
-                                <p class="text-xl font-semibold text-gray-900">
-                                  Boost your conversion rate
-                                </p>
-                                <p class="mt-3 text-base text-gray-500">
-                                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.
-                                </p>
+                          <div class="ml-3 ">
+                            <p class="text-sm font-medium text-gray-900">
+                              <a href="#" class="hover:underline">
+                              <?=$display['end_date']?>
                               </a>
+                            </p>
+                            <div class="flex gap-5 space-x-1 text-sm text-gray-500">
+                              <time datetime="2020-03-16">
+                              <?=$display['start_date']?>
+                              </time>
+                              <span aria-hidden="true">
+                                ·
+                              </span>
+                              <span>
+                                6 min read
+                              </span>
+                              <div class="flex">
+                              <span>
+                              <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160V416c0 53 43 96 96 96H352c53 0 96-43 96-96V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"/></svg>
+                              </span>
                             </div>
-                            <div class="mt-6 flex items-center">
-                              <div class="flex-shrink-0">
-                                <a href="#">
-                                  <span class="sr-only">Roel Aufderehar</span>
-                                  <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
-                                </a>
                               </div>
-                              <div class="ml-3 flex gap-3">
-                                <div>
-                                <p class="text-sm font-medium text-gray-900">
-                                  <a href="#" class="hover:underline">
-                                    Roel Aufderehar
-                                  </a>
-                                </p>
-                                <div class="flex space-x-1 text-sm text-gray-500">
-                                  <time datetime="2020-03-16">
-                                    Mar 16, 2020
-                                  </time>
-                                  <span aria-hidden="true">
-                                    ·
-                                  </span>
-                                  <span>
-                                    6 min read
-                                  </span>
-                                </div>
-                                </div>
-                                <button class="inline-flex items px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-medium rounded-md">
-	<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-	  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
-	</svg>
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <?php
+          }
+          ?>
+                  
+                </div>
+              </div>
+            </div>
 
-	Modifier
-  </button>
-
- 
-   <!-- Form pop-up container -->
-   <div x-show="open" class="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50" x-description="Form pop-up overlay" @click="open = false" aria-hidden="true">
+            <div class="relative bg-[#E7E8EA] pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+                  </div>
+                    <div class="text-center">
+                    <div >
+  <div  class="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50" id="fromHidden" >
             <div class="modal-content bg-white mx-auto my-8 p-8 w-1/2">
-                <!-- Form content -->
-                <form action="../controllers/your_form_handler.php" method="POST">
+                <!-- Form pop up-->
+                <form action="../controllers/project.control.php" method="POST">
                     <div class="mb-4">
-                        <span @click="open = false" class="float-right cursor-pointer">&times;</span>
+                        <span onclick="clickHidden()" class="float-right cursor-pointer">&times;</span>
                         <h2 class="text-2xl font-bold">Add Project</h2>
                     </div>
                     <label for="projectName" class="block text-sm font-medium text-gray-700">Project Name</label>
@@ -237,26 +250,33 @@ require_once "../controllers/login.control.php";
                     <label for="projectDescription" class="block mt-4 text-sm font-medium text-gray-700">Project Description</label>
                     <textarea id="projectDescription" name="projectDescription" rows="4" class="mt-1 p-2 border border-gray-300 rounded-md"></textarea>
 
-                    <label for="projectTasks" class="block mt-4 text-sm font-medium text-gray-700">Project Tasks</label>
-                    <input type="text" id="projectTasks" name="projectTasks" class="mt-1 p-2 border border-gray-300 rounded-md">
+                    <label for="projectTasks" class="block mt-4 text-sm font-medium text-gray-700">Start Date</label>
+                    <input type="date" id="start_date" name="start_date" class="mt-1 p-2 border border-gray-300 rounded-md">
 
-                    <button type="submit" class="mt-4 inline-flex bg-[#0891b1] items-center px-4 py-2 hover:bg-indigo-600 text-white text-sm font-medium rounded-md">
-                        Add Project
-                    </button>
+                    <label for="projectTasks" class="block mt-4 text-sm font-medium text-gray-700">End Date</label>
+                    <input type="date" id="end_date" name="end_date" class="mt-1 p-2 border border-gray-300 rounded-md">
+                    <button type="submitProjet" name="submitProjet" class="mt-4 inline-flex bg-[#0891b1] items-center px-4 py-2 hover:bg-indigo-600 text-white text-sm font-medium rounded-md">
+        Add Project
+    </button>
                 </form>
             </div>
         </div>
     </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
 
-          </main>
-        </div>
-      </div>
+
     
-      </div>
-    
+
+      <script>
+          
+          function clickHidden() {
+    formHidden = document.getElementById("fromHidden");
+    if (formHidden.style.display === 'none') {
+        formHidden.style.display = "block";
+    } else {
+        formHidden.style.display = "none";
+    }
+}
+
+</script>
 </body>
 </html>
