@@ -2,7 +2,7 @@
 require_once "../controllers/project.control.php";
 
 $project = new Project();
-$displayProjet = $project->getAllProjects();
+$displayProjet = $project->getAllProjects($_SESSION['user_id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">

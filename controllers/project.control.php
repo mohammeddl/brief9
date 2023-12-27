@@ -5,7 +5,7 @@ $project = new Project();
 $project->__construct(new db());
 
 if(isset($_POST['submitProjet'])){
-    $id = $_POST['idUsser'];
+    $id = $_SESSION['user_id'];
     $name = $_POST['projectName'];
     $description = $_POST['projectDescription'];
     $startDate = $_POST['start_date'];
@@ -13,7 +13,7 @@ if(isset($_POST['submitProjet'])){
 
     $project->addProject($name,$description,$startDate,$endDate,$id);
     
-    header('Location: project.php');
+    header('Location:../views/project.php');
 }
 if(isset($_POST['delete_project'])) {
 
@@ -40,3 +40,4 @@ function editAchtion(){
 
     $id = $_POST['id'];
 }
+
