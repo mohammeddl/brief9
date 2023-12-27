@@ -121,19 +121,22 @@ require_once "../controllers/login.control.php";
 
             </nav>
           </div>
-          <div class="flex-shrink-0 flex border-t border-indigo-800 p-4">
-            <a href="#" class="flex-shrink-0 w-full group block">
-              <div class="flex items-center">
-
-                <div class="ml-3">
-                  <p class="text-sm font-medium text-white">
-                    <?php echo $_SESSION['user_name'] ?>
-                  </p>
-                  <p class="text-xs font-medium text-indigo-200 group-hover:text-white">
-                    <?php echo $_SESSION['user_id'] ?>
-                  </p>
+          <div class="flex justify-between border-t border-indigo-800 p-4">
+            <div class="flex items-center">
+              <div class="ml-3">
+                <p class="text-sm font-medium text-white">
+                  <?php echo $_SESSION['user_name'] ?>
+                </p>
+                <p class="text-xs font-medium text-indigo-200 group-hover:text-white">
+                  <?php echo $_SESSION['user_role'] ?>
+                </p>
+              </div>
+              <div>
                 </div>
               </div>
+              <a href="../controllers/logout.php" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+              <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M352 96l64 0c17.7 0 32 14.3 32 32l0 256c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0c53 0 96-43 96-96l0-256c0-53-43-96-96-96l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-9.4 182.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L242.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"/></svg>
+              </a>
             </a>
           </div>
         </div>
