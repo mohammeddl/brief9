@@ -16,7 +16,7 @@
                 <!-- Form pop up-->
                 <form action="../controllers/project.control.php" method="POST">
                     <div class="mb-4">
-                        <span onclick="clickHiddenProject()" class="float-right cursor-pointer">&times;</span>
+                        <span onclick="" class="float-right cursor-pointer">&times;</span>
                         <h2 class="text-2xl font-bold">Add Project</h2>
                     </div>
                     <input type="hidden" name="project_id" value="<?= $display['id'] ?>">

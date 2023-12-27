@@ -13,3 +13,4 @@ if (isset($_POST['submitLogin'])) {
 if ($_SESSION['user_role'] != 'member') {
     header("Location: login.php");
 }
+

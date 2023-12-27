@@ -25,7 +25,7 @@ if(isset($_POST['delete_project'])) {
 
 // if (isset($_POST['edit_project'])) {
 //     // Get the project ID
-//     $projectId = $_POST['project_id'];
+//     $projectId = $_POST['project_id']; 
 
 //     // Fetch the project details from the database using $projectId
 //     $projectDetails = $project->getProjectDetails($projectId);
@@ -35,3 +35,8 @@ if(isset($_POST['delete_project'])) {
 //     header("Location: edit_project.php?id=$projectId");
 //     exit();
 // }
+
+function editAchtion(){
+
+    $id = $_POST['id'];
+}
